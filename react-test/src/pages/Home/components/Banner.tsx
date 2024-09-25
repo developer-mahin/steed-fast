@@ -39,12 +39,12 @@ const Banner = () => {
               <animated.button
                 style={animationProps}
                 onMouseEnter={() => setToggle(!toggle)}
-                className="px-[25px] py-3 bg-white text-lg font-medium cursor-pointer rounded-lg"
+                className="px-6 py-2 bg-white text-lg cursor-pointer rounded-lg"
               >
                 Buy Now
               </animated.button>
               <div>
-                <button className="px-[25px] py-3 border text-white border-white text-lg font-medium cursor-pointer rounded-lg">
+                <button className="px-6 py-2 border text-white border-white text-lg cursor-pointer rounded-lg">
                   More Details
                 </button>
               </div>
