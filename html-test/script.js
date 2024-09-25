@@ -35,16 +35,3 @@ fetch('./fakedata.json')
         productSection.append(productContainer);
     })
     .catch(error => console.error(error));
-
-document.querySelectorAll('.smooth-scroll').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-
-        targetSection.scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
