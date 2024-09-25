@@ -24,14 +24,14 @@ const SingleProductCard: React.FC<TProps> = ({ item }) => {
         onMouseEnter={() => setToggle(!toggle)}
         className="cursor-pointer "
       >
-        <img src={img} alt={title} className="rounded-t-xl h-[350px] w-full" />
+        <img src={img} alt={title} className="rounded-t-xl h-[300px] w-full" />
         <div className="px-5 py-2.5 border rounded-b-xl">
           <div className="flex items-center justify-between">
             <p className="text-lg font-semibold text-[#333]">{title}</p>
             <p className="text-lg font-semibold text-[#333]">${price}</p>
           </div>
           <p className="mt-4 text-[#333]">
-            {description.slice(0, 60) + "...See More"}
+            {description.slice(0, 50) + "...See More"}
           </p>
 
           <div>

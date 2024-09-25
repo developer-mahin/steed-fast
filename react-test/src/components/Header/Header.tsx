@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="lg:grid flex items-center justify-between grid-cols-3 bg-gray-200/60 py-6 px-5 relative border-b-2 border-gray-300/80 shadow-md">
+      <nav className="lg:grid flex items-center justify-between grid-cols-3 bg-[#EAE8E8] py-[18px] px-5 relative border-b-2 border-gray-300/80 shadow-md">
         <div className="flex items-center">
           <div className="cursor-pointer xl:hidden block flex-col gap-1.5">
             {isOpen ? (
@@ -37,7 +37,7 @@ const Header = () => {
           </ul>
         </div>
 
-        <div className="logo text-center text-2xl tracking-widest">
+        <div className="text-center text-[20px] font-[600] tracking-[12px]">
           JAMES MICHELLE
         </div>
 
@@ -46,7 +46,7 @@ const Header = () => {
             <li className="lg:block hidden">
               <Link
                 to="/"
-                className="text-black text-lg hover:text-yellow-500 transition"
+                className="text-black hover:text-yellow-500 transition"
               >
                 Search
               </Link>
@@ -54,17 +54,14 @@ const Header = () => {
             <li className="lg:block hidden">
               <Link
                 to="/"
-                className="text-black text-lg hover:text-yellow-500 transition"
+                className="text-black hover:text-yellow-500 transition"
               >
                 Account
               </Link>
             </li>
           </ul>
           <div className="cart flex items-center gap-2">
-            <Link
-              to="/"
-              className="cart-text text-black text-lg lg:block hidden"
-            >
+            <Link to="/" className="cart-text text-black lg:block hidden">
               Cart
             </Link>
             <svg

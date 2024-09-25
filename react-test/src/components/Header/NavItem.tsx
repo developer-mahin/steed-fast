@@ -17,7 +17,7 @@ const NavItem: React.FC<TProps> = ({ item }) => {
     >
       <Link
         to={item.link}
-        className="xl:text-black text-white text-lg hover:text-yellow-500 transition"
+        className="xl:text-black font-[500] text-white  hover:text-yellow-500 transition"
       >
         {item.title}
       </Link>
