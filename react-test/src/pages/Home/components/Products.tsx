@@ -12,7 +12,7 @@ const Products = () => {
       <Container>
         <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
           {products.map((item: TProducts, i: number) => (
-            <SingleProductCard key={i} item={item} />
+            <SingleProductCard item={item} key={i} />
           ))}
         </div>
       </Container>

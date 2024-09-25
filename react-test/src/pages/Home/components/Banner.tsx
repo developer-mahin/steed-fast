@@ -1,9 +1,27 @@
 import Container from "../../../components/Shared/Container";
+import { useSpring, animated } from "@react-spring/web";
 import "./style.css";
+import { useState } from "react";
+import { useHoverAnimatedProps } from "../../../utils/hoverAnimatedProps";
 
 const Banner = () => {
+  const [toggle, setToggle] = useState<boolean>(false);
+
+  const [props] = useSpring(
+    () => ({
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+    }),
+    []
+  );
+
+  const animationProps = useHoverAnimatedProps(toggle);
+
   return (
-    <section className="hero w-full lg:h-[90vh] h-[60vh] lg:bg-center bg-left bg-no-repeat bg-cover">
+    <animated.section
+      style={props}
+      className="hero w-full lg:h-[90vh] h-[60vh] lg:bg-center bg-left bg-no-repeat bg-cover"
+    >
       <Container>
         <div className="grid lg:grid-cols-2 lg:h-[80vh] h-[50vh] items-center justify-center">
           <div className=""></div>
@@ -18,9 +36,13 @@ const Banner = () => {
               Gift they will love-guaranteed!
             </p>
             <div className="mt-[50px] flex items-center gap-8">
-              <button className="px-[25px] py-3 bg-white text-lg font-medium cursor-pointer rounded-lg">
+              <animated.button
+                style={animationProps}
+                onMouseEnter={() => setToggle(!toggle)}
+                className="px-[25px] py-3 bg-white text-lg font-medium cursor-pointer rounded-lg"
+              >
                 Buy Now
-              </button>
+              </animated.button>
               <button className="px-[25px] py-3 border text-white border-white text-lg font-medium cursor-pointer rounded-lg">
                 More Details
               </button>
@@ -28,7 +50,7 @@ const Banner = () => {
           </div>
         </div>
       </Container>
-    </section>
+    </animated.section>
   );
 };
 
