@@ -1,8 +1,8 @@
 import { animated } from "@react-spring/web";
 import { useState } from "react";
+import SharedModal from "../../../components/Shared/SharedModal";
 import { useHoverAnimatedProps } from "../../../utils/hoverAnimatedProps";
 import { TProducts } from "./fakeData";
-import DetailsModal from "./DetailsModal";
 import ProductDetailsModalContent from "./ProductDetailsModalContent";
 
 type TProps = {
@@ -37,7 +37,7 @@ const SingleProductCard: React.FC<TProps> = ({ item }) => {
           <div>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-gray-400 px-8 py-2.5 rounded-lg mt-4 text-white font-medium cursor-pointer"
+              className="bg-gray-400 px-8 py-2 rounded-lg mt-4 text-white font-medium cursor-pointer"
             >
               Details
             </button>
@@ -45,13 +45,13 @@ const SingleProductCard: React.FC<TProps> = ({ item }) => {
         </div>
       </animated.div>
 
-      <DetailsModal
+      <SharedModal
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
         modalTitle="Product Details Modal"
       >
         <ProductDetailsModalContent item={item} />
-      </DetailsModal>
+      </SharedModal>
     </div>
   );
 };

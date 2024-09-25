@@ -1,5 +1,6 @@
 import Container from "../../../components/Shared/Container";
 import { products, TProducts } from "./fakeData";
+import ProductFilterSection from "./ProductFilterSection";
 import SingleProductCard from "./SingleProductCard";
 
 const Products = () => {
@@ -10,6 +11,10 @@ const Products = () => {
       </h2>
 
       <Container>
+        <div className="mb-10">
+          <ProductFilterSection />
+        </div>
+
         <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
           {products.map((item: TProducts, i: number) => (
             <SingleProductCard item={item} key={i} />

@@ -6,6 +6,11 @@ export type TProducts = {
   category: string;
 };
 
+export type TOption = {
+  key: string;
+  label: string;
+};
+
 export const products: TProducts[] = [
   {
     img: "https://i.ibb.co.com/wyT2kjz/newedits-180.webp",
@@ -39,5 +44,36 @@ export const products: TProducts[] = [
     category: "New",
     description:
       "12k gold plated over brass. 30mm long small fish, 46mm long large fish",
+  },
+];
+
+export const categoryOptions: TOption[] = [
+  {
+    key: "Best Selling",
+    label: "Best Selling",
+  },
+  {
+    key: "New",
+    label: "New",
+  },
+];
+
+export const priceOptions: TOption[] = [
+  {
+    key: "150",
+    label: "$150",
+  },
+  {
+    key: "160",
+    label: "$160",
+  },
+
+  {
+    key: "190",
+    label: "$190",
+  },
+  {
+    key: "210",
+    label: "$210",
   },
 ];
