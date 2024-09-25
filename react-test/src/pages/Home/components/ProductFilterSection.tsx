@@ -1,36 +1,64 @@
+import { useEffect, useState } from "react";
 import Select from "../../../components/Shared/Select";
-import { categoryOptions, priceOptions } from "./fakeData";
+import { categoryOptions, priceOptions, products, TProducts } from "./fakeData";
 
-const ProductFilterSection = () => {
+type TProps = {
+  setAllProducts: React.Dispatch<React.SetStateAction<TProducts[]>>;
+};
+
+const ProductFilterSection: React.FC<TProps> = ({ setAllProducts }) => {
+  const [category, setCategory] = useState<string>("");
+  const [price, setPrice] = useState<string>("");
+
+  useEffect(() => {
+    let newProductArray: TProducts[] = products;
+
+    console.log(category);
+
+    if (category) {
+      newProductArray = products.filter(
+        (product) => product.category === category
+      );
+
+      if (category === "") {
+        setAllProducts(products);
+      }
+    }
+
+    if (price) {
+      const updatedPrice = Number(price);
+      newProductArray = products.filter(
+        (product) => Number(product.price) <= updatedPrice
+      );
+    }
+
+    setAllProducts(newProductArray);
+  }, [price, category, setAllProducts]);
+
   return (
-    <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+    <div className="">
       <h2 className="text-2xl font-bold mb-4 text-gray-700">Product Filter</h2>
 
-      {/* Category Filter */}
-      <div className="mb-4">
-        <Select
-          defaultOption="All Categories"
-          id="category"
-          label="Category"
-          options={categoryOptions}
-        />
-      </div>
+      <div className="lg:w-[450px]">
+        <div className="mb-4">
+          <Select
+            defaultOption="All Categories"
+            id="category"
+            label="Category"
+            options={categoryOptions}
+            setFunction={setCategory}
+          />
+        </div>
 
-      {/* Price Filter */}
-      <div className="mb-4">
-        <Select
-          defaultOption="Select One..."
-          id="price"
-          label="Price"
-          options={priceOptions}
-        />
-      </div>
-
-      {/* Filtered Product List */}
-      <div>
-        <h3 className="text-xl font-semibold text-gray-700 mb-3">
-          Filtered Products:
-        </h3>
+        <div className="mb-4">
+          <Select
+            defaultOption="Select One..."
+            id="price"
+            label="Price"
+            options={priceOptions}
+            setFunction={setPrice}
+          />
+        </div>
       </div>
     </div>
   );
