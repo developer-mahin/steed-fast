@@ -1,8 +1,12 @@
+import Banner from "./components/Banner";
+import Products from "./components/Products";
+
 const Home = () => {
   return (
-    <div>
-      <h2>Welcome to the Home page</h2>
-    </div>
+    <>
+      <Banner />
+      <Products />
+    </>
   );
 };
 
