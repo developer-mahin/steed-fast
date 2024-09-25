@@ -1,8 +1,8 @@
-import Container from "../../../components/Shared/Container";
-import { useSpring, animated } from "@react-spring/web";
-import "./style.css";
+import { animated, useSpring } from "@react-spring/web";
 import { useState } from "react";
+import Container from "../../../components/Shared/Container";
 import { useHoverAnimatedProps } from "../../../utils/hoverAnimatedProps";
+import "./style.css";
 
 const Banner = () => {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -43,9 +43,11 @@ const Banner = () => {
               >
                 Buy Now
               </animated.button>
-              <button className="px-[25px] py-3 border text-white border-white text-lg font-medium cursor-pointer rounded-lg">
-                More Details
-              </button>
+              <div>
+                <button className="px-[25px] py-3 border text-white border-white text-lg font-medium cursor-pointer rounded-lg">
+                  More Details
+                </button>
+              </div>
             </div>
           </div>
         </div>

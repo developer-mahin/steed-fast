@@ -27,8 +27,8 @@ const Header = () => {
           <ul
             className={`flex xl:items-center lg:space-x-4 rounded-lg xl:flex-row flex-col lg:justify-end xl:static absolute z-50 transition-all duration-300 ${
               isOpen
-                ? "top-20 left-0 bg-[#00000074] w-[220px] py-3 px-4 translate-y-0"
-                : "-top-[650px] translate-y-0"
+                ? "left-0 top-20 bg-[#000000d4] w-[320px] py-3 px-4 translate-y-0 h-[500vh]"
+                : "-left-[650px] translate-y-0"
             }`}
           >
             {navItems.map((item: TNavItems, i: number) => (

@@ -13,7 +13,7 @@ const NavItem: React.FC<TProps> = ({ item }) => {
       style={{
         marginLeft: "0px",
       }}
-      className="xl:border-0 border-b px-2.5"
+      className="xl:border-0 border-b px-2.5 xl:py-0 py-3"
     >
       <Link
         to={item.link}
